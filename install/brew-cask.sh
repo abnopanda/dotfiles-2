@@ -2,34 +2,48 @@
 
 brew tap caskroom/cask
 brew install brew-cask
-brew tap caskroom/versions
+#brew tap caskroom/versions
 
 # Install packages
 
 apps=(
-  alfred
+#  alfred
   dash2
   dropbox
-  firefox
-  firefox-nightly
-  flux
-  glimmerblocker
-  google-chrome
-  google-chrome-canary
-  google-drive
-  hammerspoon
-  kaleidoscope
-  macdown
-  opera
-  screenflow
-  slack
-  sourcetree
-  spotify
-  sublime-text3
-  transmit
-  virtualbox
-  vlc
-  webstorm
+  1password
+  popclip
+  crashplan
+  droplr
+  dropzone
+  hazel
+  sublime-text
+  tower
+  transporter
+  tunnelblick
+  transporter-desktop
+  nvalt
+  bartender
+#  caffeine
+#  firefox
+#  firefox-nightly
+#  flux
+#  glimmerblocker
+#  google-chrome
+#  google-chrome-canary
+#  google-drive
+#  hammerspoon
+#  kaleidoscope
+#  macdown
+#  opera
+#  screenflow
+#  slack
+#  sourcetree
+#  spotify
+#  sublime-text3
+#  transmit
+#  virtualbox
+#  vlc
+#  webstorm
 )
 
 brew cask install "${apps[@]}"
