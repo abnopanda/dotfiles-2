@@ -28,7 +28,7 @@ if [ "$(uname)" == "Darwin" ]; then
 . "$DOTFILES_DIR/install/brew.sh"
 #  . "$DOTFILES_DIR/install/brew-cask.sh"
 #  . "$DOTFILES_DIR/install/gem.sh"
-#  ln -sfv "$DOTFILES_DIR/etc/mackup/.mackup.cfg" ~
+  ln -sfv "$DOTFILES_DIR/etc/mackup/.mackup.cfg" ~
 fi
 
 # Run tests
