@@ -1,0 +1,49 @@
+tap 'abnopanda/versions'
+tap 'caskroom/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+brew 'libyaml'
+brew 'openssl@1.1'
+brew 'ansible'
+brew 'autoconf'
+brew 'coreutils'
+brew 'dockutil'
+brew 'mas'
+brew 'openssl'
+brew 'pkg-config'
+brew 'readline'
+brew 'pyenv'
+brew 'sqlite'
+brew 'ssh-copy-id'
+cask 'bartender'
+#cask 'betterzipql'
+cask 'crashplan'
+cask 'dash'
+cask 'dropbox'
+cask 'hazel3'
+cask 'nvalt'
+#cask 'qlcolorcode'
+#cask 'qlimagesize'
+#cask 'qlmarkdown'
+#cask 'qlprettypatch'
+#cask 'qlstephen'
+#cask 'quicklook-csv'
+#cask 'quicklook-json'
+cask 'sublime-text'
+cask 'suspicious-package'
+cask 'tower'
+cask 'tunnelblick'
+cask 'webpquicklook'
+mas 'Xcode', id: 497799835
+mas 'Delicious Library 3', id: 635124250
+mas '2Do', id: 477670270
+mas 'Day One Classic', id: 422304217
+mas 'Popclip', id: 445189367
+mas '1Password', id: 443987910
+mas 'Kaleidoscope', id: 587512244
+mas 'Paprika Recipe Manager', id: 451907568
+mas 'Slack', id: 803453959
+mas 'Home Inventory', id: 413564952
+mas 'Ulysses', id: 623795237
+mas 'PopClip', id: 445189367
+mas 'Droplr', id: 498672703

@@ -2,7 +2,7 @@
 
 brew tap caskroom/cask
 #brew install brew-cask
-#brew tap caskroom/versions
+brew tap abnopanda/versions
 
 # Install packages
 
@@ -11,11 +11,11 @@ apps=(
   dash
   dropbox
   1password
-  popclip
+#  popclip
   crashplan
   droplr
   dropzone
-  hazel
+  hazel3
   sublime-text
   tower
   tunnelblick
