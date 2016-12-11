@@ -32,16 +32,14 @@ sudo pmset -a standbydelay 86400
 #
 
 # Menu bar: hide the Time Machine, Volume, and User icons
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-	defaults write "${domain}" dontAutoLoad -array \
+defaults -currentHost write com.apple.systemuiserver dontAutoLoad -array \
 		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
 		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
 		"/System/Library/CoreServices/Menu Extras/User.menu"
-done
 defaults write com.apple.systemuiserver menuExtras -array \
 	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
 	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 ## Set highlight color to green
@@ -113,7 +111,7 @@ defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 sudo systemsetup -setrestartfreeze on
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -135,11 +133,11 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 sudo pmset -a hibernatemode 0
 
 # Remove the sleep image file to save disk space
-sudo rm /private/var/vm/sleepimage
-# Create a zero-byte file instead…
-sudo touch /private/var/vm/sleepimage
-# …and make sure it can’t be rewritten
-sudo chflags uchg /private/var/vm/sleepimage
+[ ! -e /private/var/vm/sleepimage ] || sudo rm /private/var/vm/sleepimage
+## Create a zero-byte file instead…
+#sudo touch /private/var/vm/sleepimage
+## …and make sure it can’t be rewritten
+#sudo chflags uchg /private/var/vm/sleepimage
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
@@ -192,12 +190,12 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 ## Set a blazingly fast keyboard repeat rate
 #defaults write NSGlobalDomain KeyRepeat -int 1
 #defaults write NSGlobalDomain InitialKeyRepeat -int 15
-
-# Automatically illuminate built-in MacBook keyboard in low light
-defaults write com.apple.BezelServices kDim -bool true
-# Turn off keyboard illumination when computer is not used for 5 minutes
-defaults write com.apple.BezelServices kDimTime -int 300
-
+#
+## Automatically illuminate built-in MacBook keyboard in low light
+#defaults write com.apple.BezelServices kDim -bool true
+## Turn off keyboard illumination when computer is not used for 5 minutes
+#defaults write com.apple.BezelServices kDimTime -int 300
+#
 ## Set language and text formats
 ## Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 ## `Inches`, `en_GB` with `en_US`, and `true` with `false`.
@@ -417,8 +415,8 @@ defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
-## Automatically hide and show the Dock
-#defaults write com.apple.dock autohide -bool true
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -965,12 +963,12 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 ################################################################################
 ## Kill affected applications                                                  #
 ################################################################################
-#
-#for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	#"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-	#"Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-	#"Transmission" "Tweetbot" "Twitter" "iCal"; do
-	#killall "${app}" &> /dev/null
-#done
-#echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
+  "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
+  "Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
+	"Transmission" "Tweetbot" "Twitter" "iCal"; do
+	killall "${app}" &> /dev/null
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."
 
