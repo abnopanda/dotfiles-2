@@ -33,7 +33,9 @@ fi
 
 # Run tests
 
-bats test/*.bats
+if $(which bats); then
+  bats test/*.bats
+fi
 
 # Install extra stuff
 

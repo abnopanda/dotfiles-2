@@ -1,9 +1,12 @@
 # Install Homebrew
 
+if !$(which brew); then
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 #brew tap homebrew/versions
 #brew tap homebrew/dupes
 #brew tap Goles/battery
+fi
+
 brew update
 brew upgrade
 
@@ -29,7 +32,8 @@ apps=(
 #  mackup
 #  peco
 #  psgrep
-  python
+#  python
+  pyenv
   ansible
 #  shellcheck
   ssh-copy-id

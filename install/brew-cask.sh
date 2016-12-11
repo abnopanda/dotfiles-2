@@ -1,14 +1,14 @@
 # Install Caskroom
 
 brew tap caskroom/cask
-brew install brew-cask
+#brew install brew-cask
 #brew tap caskroom/versions
 
 # Install packages
 
 apps=(
 #  alfred
-  dash2
+  dash
   dropbox
   1password
   popclip
@@ -18,9 +18,8 @@ apps=(
   hazel
   sublime-text
   tower
-  transporter
   tunnelblick
-  transporter-desktop
+#  transporter-desktop
   nvalt
   bartender
 #  caffeine
@@ -52,4 +51,4 @@ brew cask install "${apps[@]}"
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
 # Link Hammerspoon config
-[ -d ~/.hammerspoon ] || ln -sfv "$DOTFILES_DIR/etc/hammerspoon/" ~/.hammerspoon
+#[ -d ~/.hammerspoon ] || ln -sfv "$DOTFILES_DIR/etc/hammerspoon/" ~/.hammerspoon
