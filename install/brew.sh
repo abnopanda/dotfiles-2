@@ -47,4 +47,4 @@ brew upgrade
 #
 #brew install "${apps[@]}"
 
-brew bundle 
+brew bundle --file=$DOTFILES_DIR/install/Brewfile

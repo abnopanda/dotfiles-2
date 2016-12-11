@@ -8,6 +8,7 @@ brew 'ansible'
 brew 'autoconf'
 brew 'coreutils'
 brew 'dockutil'
+brew 'mackup'
 brew 'mas'
 brew 'openssl'
 brew 'pkg-config'
@@ -33,7 +34,7 @@ cask 'sublime-text'
 cask 'suspicious-package'
 cask 'tower'
 cask 'tunnelblick'
-cask 'webpquicklook'
+#cask 'webpquicklook'
 mas 'Xcode', id: 497799835
 mas 'Delicious Library 3', id: 635124250
 mas '2Do', id: 477670270
