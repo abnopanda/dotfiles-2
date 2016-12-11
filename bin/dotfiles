@@ -34,22 +34,22 @@ sub_test () {
 
 sub_update () {
   sudo softwareupdate -i -a
-  brew update
-  brew upgrade
-  npm install npm -g
-  npm update -g
-  gem update --system
-  gem update
-  pip install --upgrade pip
-  pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
+  which brew && brew update
+  which brew && brew upgrade
+#  which npm && npm install npm -g
+#  which npm && npm update -g
+#  which gem && gem update --system
+#  which gem && gem update
+#  which pip && pip install --upgrade pip
+#  which pip && pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U
 }
 
 sub_clean () {
-  brew cleanup
-  brew cask cleanup
-  npm cache clean
-  gem cleanup
-  rvm cleanup all
+  which brew && brew cleanup
+  which brew && brew cask cleanup
+#  which npm && npm cache clean
+#  which gem && gem cleanup
+#  which rvm && rvm cleanup all
 }
 
 sub_macos () {

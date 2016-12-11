@@ -24,9 +24,9 @@ nnoremap <leader><leader> <C-^>     " Switch between last two buffers
 
 " Load plugins
 
-if filereadable(expand("$VIM/vundle.vim"))
-  source $VIM/vundle.vim
-endif
+"if filereadable(expand("$VIM/vundle.vim"))
+"  source $VIM/vundle.vim
+"endif
 
 " Swap file and backups
 
@@ -82,7 +82,7 @@ syntax on
 set cursorline
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+"colorscheme solarized
 highlight clear SignColumn
 
 " Scrolling
