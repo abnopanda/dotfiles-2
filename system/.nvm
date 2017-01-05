@@ -1,2 +1,2 @@
 export NVM_DIR=~/.nvm
-which nvm && source $(brew --prefix nvm)/nvm.sh
+hast nvm 2>/dev/null && source $(brew --prefix nvm)/nvm.sh

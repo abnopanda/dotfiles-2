@@ -1,2 +1,0 @@
-
-which pyenv && eval "$(pyenv virtualenv-init -)"

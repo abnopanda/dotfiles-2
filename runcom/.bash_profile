@@ -32,7 +32,7 @@ for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,compl
 done
 
 if [ "$OS" = "MacOS" ]; then
-  for DOTFILE in "$DOTFILES_DIR"/system/.{env,alias,function}.macos; do
+  for DOTFILE in "$DOTFILES_DIR"/system/.{env,alias,function,pyenv}.macos; do
     [ -f "$DOTFILE" ] && . "$DOTFILE"
   done
 fi
